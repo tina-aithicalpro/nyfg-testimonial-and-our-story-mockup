@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #cbb37a; color: #fff; }
+    @media (max-width: 880px) {
+      .nyfg-nav-links { display: none !important; }
+      .nyfg-burger { display: flex !important; }
+      .nyfg-collage { grid-template-columns: 1fr !important; }
+      .nyfg-collage .nyfg-card { margin: -32px 20px 0 !important; }
+      .nyfg-team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+  </style>
+</helmet>
+
+<div style="font-family:'Montserrat','Helvetica Neue',Arial,sans-serif; color:#282828; background:#FFFFFF;" data-screen-label="Our Story">
+
+  <!-- ═══ HEADER ═══ -->
+  <header style="background:#FFFFFF; border-bottom:1px solid rgba(0,0,0,0.08); position:sticky; top:0; z-index:100;">
+    <div style="max-width:1320px; margin:0 auto; padding:22px 40px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center;">
+      <nav class="nyfg-nav-links" style="display:flex; align-items:center; gap:26px;">
+        <a href="https://www.nyfg.nyc/about" style="font-size:11px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:underline; text-underline-offset:6px; text-decoration-thickness:1px;">About</a>
+        <a href="https://www.nyfg.nyc/contact" style="font-size:11px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;" style-hover="color:#9c8452;">Contact</a>
+        <a href="https://www.nyfg.nyc/create-account" style="font-size:11px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;" style-hover="color:#9c8452;">Account</a>
+        <a href="https://www.nyfg.nyc/transport" style="font-size:11px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;" style-hover="color:#9c8452;">Transport</a>
+        <a href="https://www.nyfg.nyc/tutorials" style="font-size:11px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;" style-hover="color:#9c8452;">Tutorials</a>
+      </nav>
+
+      <a href="https://www.nyfg.nyc/" style="display:flex; align-items:center; justify-self:center;">
+        <img src="https://images.squarespace-cdn.com/content/v1/62defd9fa3ff3c2dab2b44f2/9a7889ba-421c-4966-b708-42571727689f/nyfg-logo-gold.png?format=300w" alt="New York Flower Group" style="height:96px; width:auto;">
+      </a>
+
+      <div style="display:flex; justify-content:flex-end;">
+        <a href="https://shop.nyfg.nyc" style="background:#ddc99a; color:#282828; padding:13px 30px; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; text-decoration:none; white-space:nowrap;" style-hover="background:#cbb37a;">Webshop</a>
+      </div>
+
+      <button aria-label="Menu" onClick="{{ toggleMenu }}" style="display:none; background:none; border:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; grid-column:1;" class="nyfg-burger">
+        <span style="width:22px; height:1.5px; background:#282828;"></span>
+        <span style="width:22px; height:1.5px; background:#282828;"></span>
+        <span style="width:22px; height:1.5px; background:#282828;"></span>
+      </button>
+    </div>
+
+    <sc-if value="{{ menuOpen }}">
+      <div style="border-top:1px solid rgba(0,0,0,0.08); padding:16px 24px 20px; display:flex; flex-direction:column; gap:16px;">
+        <a href="https://www.nyfg.nyc/about" style="font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;">About</a>
+        <a href="https://www.nyfg.nyc/contact" style="font-size:12px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;">Contact</a>
+        <a href="https://www.nyfg.nyc/create-account" style="font-size:12px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;">Account</a>
+        <a href="https://www.nyfg.nyc/transport" style="font-size:12px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;">Transport</a>
+        <a href="https://www.nyfg.nyc/tutorials" style="font-size:12px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase; color:#282828; text-decoration:none;">Tutorials</a>
+        <a href="https://shop.nyfg.nyc" style="background:#ddc99a; color:#282828; padding:12px; text-align:center; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; text-decoration:none;">Webshop</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- ═══ BREADCRUMB ═══ -->
+  <div style="max-width:1200px; margin:0 auto; padding:20px 40px 0;">
+    <a href="https://www.nyfg.nyc/about" style="font-size:11px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:#9c8452; text-decoration:none;">&larr; Back to About</a>
+  </div>
+
+  <!-- ═══ PAGE LABEL ═══ -->
+  <div style="text-align:center; padding:36px 40px 44px;">
+    <div style="font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#9c8452; margin-bottom:14px;">About / Our Story</div>
+    <h1 style="font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:44px; margin:0; color:#282828;">Our Story</h1>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <div style="position:relative; width:100%; min-height:440px; display:flex; align-items:center; justify-content:center;">
+    <img src="https://images.squarespace-cdn.com/content/v1/62defd9fa3ff3c2dab2b44f2/832c6a84-ce38-494c-ba6d-0423b9607a02/IMG_7360+%281%29.jpeg" alt="NYFG market floor" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <div style="position:absolute; inset:0; background:rgba(40,25,20,0.30);"></div>
+  </div>
+
+  <!-- ═══ WHO WE ARE ═══ -->
+  <div style="background:#e8dab0; padding:80px 0 100px;">
+    <div class="nyfg-collage" style="max-width:1200px; margin:0 auto; padding:0 40px; display:grid; grid-template-columns:1fr 1fr; align-items:end;">
+      <div class="nyfg-card" style="background:#FFFFFF; padding:40px; margin:0 32px 0 0; position:relative; z-index:2; max-width:400px;">
+        <div style="font-weight:600; font-size:15px; letter-spacing:2px; text-transform:uppercase; color:#282828; margin-bottom:20px;">Who We Are</div>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; line-height:1.6; color:#282828; margin:0;">New York Flower Group is a wholesale flower importer and distributor based in the heart of the New York City Wholesale Flower Market. We carry over 25,000 SKUs and serve roughly 6,000 clients nationwide, sourcing from international growers across Holland, Japan, New Zealand, France, South America, and Asia, alongside local organic farms close to home.</p>
+      </div>
+      <div style="margin:-64px 0 0 -32px; position:relative; z-index:1;">
+        <img src="https://images.squarespace-cdn.com/content/v1/62defd9fa3ff3c2dab2b44f2/e29a4599-cc94-4abc-912f-26e869dfe9d1/IMG_7873.jpeg" alt="NYFG blooms" style="width:100%; height:460px; object-fit:cover; display:block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WHERE WE CAME FROM ═══ -->
+  <div style="padding:96px 0; background:#FFFFFF;">
+    <div class="nyfg-collage" style="max-width:1200px; margin:0 auto; padding:0 40px; display:grid; grid-template-columns:1fr 1fr; align-items:center;">
+      <div style="margin:0 32px 0 0;">
+        <img src="https://images.squarespace-cdn.com/content/v1/62defd9fa3ff3c2dab2b44f2/b342fe1c-5eb4-40d8-9976-cf543aac85d6/main%288%29.jpeg" alt="NYFG history" style="width:100%; height:auto; display:block;">
+      </div>
+      <div class="nyfg-card" style="background:#f2ecda; padding:48px;">
+        <div style="font-size:15px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#282828; margin-bottom:20px;">Where We Came From</div>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:19px; line-height:1.65; color:#282828; margin:0;">New York Flower Group came together in 2020, bringing three established NYC flower companies under one name: Dutch Flower Line, G. Page Wholesale Flowers, and A Rose By Harvest. Each had built its own reputation in the wholesale flower market over decades. Combining them let us carry a deeper, more diverse inventory and a stronger network of growers than any one company could offer on its own.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TEAM STRIP ═══ -->
+  <div style="max-width:1200px; margin:0 auto; padding:0 40px 96px;">
+    <div style="text-align:center; margin-bottom:44px;">
+      <div style="font-weight:600; font-size:15px; letter-spacing:2px; text-transform:uppercase; color:#282828; margin-bottom:18px;">Meet The Team</div>
+      <div style="width:40px; height:2px; background:#cbb37a; margin:0 auto;"></div>
+    </div>
+    <div class="nyfg-team-grid" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:32px;">
+      <sc-for list="{{ team }}" as="person" hint-placeholder-count="4">
+        <div style="text-align:center;">
+          <div style="width:100%; aspect-ratio:1; background:#f2ecda; margin-bottom:18px; overflow:hidden;">
+            <img src="{{person.photo}}" alt="{{person.name}}" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <p style="font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#282828; margin:0 0 4px;">{{ person.name }}</p>
+          <p style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-size:15px; color:#9c8452; margin:0;">{{ person.role }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ═══ WHERE WE ARE ═══ -->
+  <div style="background:#e8dab0; padding:80px 0 100px;">
+    <div class="nyfg-collage" style="max-width:1200px; margin:0 auto; padding:0 40px; display:grid; grid-template-columns:1fr 1fr; align-items:end;">
+      <div class="nyfg-card" style="background:#FFFFFF; padding:40px; margin:0 32px 0 0; position:relative; z-index:2; max-width:420px;">
+        <div style="font-weight:600; font-size:15px; letter-spacing:2px; text-transform:uppercase; color:#282828; margin-bottom:20px;">Where We Are</div>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:18px; line-height:1.6; color:#282828; margin:0 0 18px;">Today, New York Flower Group operates three locations in New York City:</p>
+        <ul style="font-family:'Cormorant Garamond',Georgia,serif; font-size:18px; line-height:1.7; color:#282828; margin:0 0 18px; padding-left:20px;">
+          <li>NYFG #120 &mdash; 120 West 28th Street, New York, NY 10001</li>
+          <li>NYFG #150 &mdash; 150 West 28th Street, New York, NY 10001</li>
+          <li>NYFG Long Island City &mdash; 21-43 44th Road, Long Island City, NY 11101, our newest location at 30,000 square feet</li>
+        </ul>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:18px; line-height:1.6; color:#282828; margin:0;">Whether you walk into one of our locations or order through our webshop, you're working with one team, one inventory, and one standard of quality.</p>
+      </div>
+      <div style="margin:-64px 0 0 -32px; position:relative; z-index:1;">
+        <img src="https://images.squarespace-cdn.com/content/v1/62defd9fa3ff3c2dab2b44f2/3c68bddb-99b6-4fd3-b139-688c7c41cdfd/laptop-on-a-desk.png" alt="NYFG webshop" style="width:100%; height:460px; object-fit:cover; display:block;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WHERE WE'RE GOING ═══ -->
+  <div style="max-width:760px; margin:0 auto; padding:96px 40px; text-align:center;">
+    <div style="font-size:15px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#282828; margin-bottom:22px;">Where We're Going</div>
+    <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:22px; line-height:1.7; color:#282828; margin:0;">We're continuing to expand our grower network and bring new varieties into the New York market, while making it easier than ever to shop our full inventory online through our webshop.</p>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer style="background:#e8dab0; padding:64px 40px 32px;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:auto repeat(3, 1fr); gap:40px; align-items:start; margin-bottom:48px;">
+        <img src="https://images.squarespace-cdn.com/content/v1/62defd9fa3ff3c2dab2b44f2/51d528c4-9a4f-4bc0-9c73-0321ea0e1292/nyfg-logo-black.png" alt="NYFG" style="height:96px; width:auto;">
+
+        <div>
+          <p style="font-weight:700; font-size:14px; color:#282828; margin:0 0 10px;">NYFG #150</p>
+          <p style="font-size:13px; line-height:1.7; color:#282828; margin:0 0 10px;">150 West 28th Street<br>(Between 6th Ave and 7th)<br>New York, New York 10001</p>
+          <p style="font-size:13px; line-height:1.7; color:#282828; margin:0;"><strong>Hours:</strong><br>Mon - Fri: 5am - Noon<br>Sat: 5am - 10am</p>
+        </div>
+
+        <div>
+          <p style="font-weight:700; font-size:14px; color:#282828; margin:0 0 10px;">NYFG #120</p>
+          <p style="font-size:13px; line-height:1.7; color:#282828; margin:0 0 10px;">120 West 28th Street<br>(Between 6th Ave and 7th)<br>New York, New York 10001</p>
+          <p style="font-size:13px; line-height:1.7; color:#282828; margin:0;"><strong>Hours:</strong><br>Mon - Fri: 5am - Noon<br>Sat: 5am - 10am</p>
+        </div>
+
+        <div>
+          <p style="font-weight:700; font-size:14px; color:#282828; margin:0 0 10px;">NYFG Long Island City</p>
+          <p style="font-size:13px; line-height:1.7; color:#282828; margin:0 0 10px;">21-43 44 Rd<br>Long Island City,<br>New York 11101</p>
+          <p style="font-size:13px; line-height:1.7; color:#282828; margin:0;"><strong>Hours:</strong><br>Mon - Fri: 5am - Noon<br>Sat: 5am - 9am</p>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; padding-top:24px; border-top:1px solid rgba(0,0,0,0.1);">
+        <p style="font-size:12px; color:#282828; margin:0;">&copy; 2026 New York Flower Group</p>
+        <div style="display:flex; gap:24px; flex-wrap:wrap;">
+          <a href="https://www.nyfg.nyc/create-account" style="font-size:12px; color:#282828; text-decoration:underline;">Create Account</a>
+          <a href="https://www.nyfg.nyc/terms-conditions" style="font-size:12px; color:#282828; text-decoration:underline;">Terms &amp; Conditions</a>
+          <a href="https://www.nyfg.nyc/privacy-policy" style="font-size:12px; color:#282828; text-decoration:underline;">Privacy Policy</a>
+        </div>
+        <div style="display:flex; gap:14px;">
+          <a href="https://www.instagram.com/newyorkflowergroup/" style="color:#282828; text-decoration:none;" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://www.facebook.com/dutchflowerlineNYC" style="color:#282828; text-decoration:none;" aria-label="Facebook">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      team: [
+        { name: "Placeholder Name", role: "Co-Founder", photo: "https://placehold.co/400x400/e8dab0/282828?text=Photo" },
+        { name: "Placeholder Name", role: "Co-Founder", photo: "https://placehold.co/400x400/e8dab0/282828?text=Photo" },
+        { name: "Placeholder Name", role: "Operations", photo: "https://placehold.co/400x400/e8dab0/282828?text=Photo" },
+        { name: "Placeholder Name", role: "Sourcing", photo: "https://placehold.co/400x400/e8dab0/282828?text=Photo" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
